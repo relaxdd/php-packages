@@ -1,0 +1,16 @@
+{
+  "name": "awenn2015/array-ext",
+  "type": "library",
+  "license": "MIT",
+  "version": "dev-master",
+  "authors": [
+    {
+      "name": "awenn2015",
+      "email": "awenn2015@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.1.1"
+  }
+}

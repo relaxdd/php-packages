@@ -1,0 +1,19 @@
+{
+  "name": "awenn2015/data-validator",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Awenn2015\\DataValidator\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "awenn2015",
+      "email": "awenn2015@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4.0"
+  }
+}

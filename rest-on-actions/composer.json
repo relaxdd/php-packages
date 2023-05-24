@@ -1,0 +1,22 @@
+{
+  "name": "awenn2015/rest-on-actions",
+  "type": "library",
+  "license": "MIT",
+  "version": "dev-master",
+  "autoload": {
+    "psr-4": {
+      "Awenn2015\\RestOnActions\\": "src/",
+      "Awenn2015\\ArrayExt\\": "../array-ext/src"
+    }
+  },
+  "authors": [
+    {
+      "name": "awenn2015",
+      "email": "awenn2015@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.1.1"
+  }
+}
