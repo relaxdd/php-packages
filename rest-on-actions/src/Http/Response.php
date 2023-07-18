@@ -4,14 +4,16 @@ namespace Awenn2015\RestOnActions\Http;
 
 use JetBrains\PhpStorm\NoReturn;
 
-class Response {
+class Response
+{
   /**
    * Устанавливает статус ответа
    *
    * @param int $code
    * @return $this
    */
-  public function status(int $code = 200): static {
+  public function status(int $code = 200): static
+  {
     http_response_code($code);
     return $this;
   }
@@ -22,7 +24,8 @@ class Response {
    * @param bool $trace
    * @return void
    */
-  public function defaultError(\Throwable $err, ?int $code = null, bool $trace = false): void {
+  public function defaultError(\Throwable $err, ?int $code = null, bool $trace = false): void
+  {
     if (!is_null($code) && $code < 400)
       throw new \Error("Статус ошибки не может быть меньше 400!");
 
@@ -49,7 +52,8 @@ class Response {
    * @param string $value
    * @return $this
    */
-  public function header(string $name, string $value): Response {
+  public function header(string $name, string $value): Response
+  {
     header("$name: $value");
     return $this;
   }
@@ -60,14 +64,16 @@ class Response {
    * @param array|string $data
    * @return void
    */
-  #[NoReturn] public function json(array|string $data): void {
+  #[NoReturn] public function json(array|string $data): void
+  {
     $this->header("Content-Type", "application/json; charset=UTF-8");
     $data = is_array($data) ? $data : json_decode($data, true);
 
     die(json_encode($data, JSON_UNESCAPED_UNICODE));
   }
 
-  #[NoReturn] public function text(string $text): void {
+  #[NoReturn] public function text(string $text): void
+  {
     $this->header("Content-Type", "text/html; charset=utf-8");
     die($text);
   }
@@ -92,6 +98,25 @@ class Response {
 
     if (!empty($message))
       $res['message'] = $message;
+    else {
+      switch ($code) {
+        case 400:
+          $res['message'] = "Bad Request";
+          break;
+        case 401:
+          $res['message'] = "Not Authorized";
+          break;
+        case 403:
+          $res['message'] = "Access Denied";
+          break;
+        case 404:
+          $res['message'] = "Not Found";
+          break;
+        case 500:
+          $res['message'] = "Server Error";
+          break;
+      }
+    }
 
     $merge = array_merge($res, $concat);
 
@@ -105,7 +130,8 @@ class Response {
    * Возвращает пустой ответ на клиент
    * @return void
    */
-  #[NoReturn] public function end(): void {
+  #[NoReturn] public function end(): void
+  {
     die();
   }
 }

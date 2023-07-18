@@ -7,6 +7,16 @@ use Awenn2015\DataValidator\Data\DataReport;
 use Awenn2015\DataValidator\Data\DataStruct;
 use Awenn2015\DataValidator\Data\ListStruct;
 
+/* ======== AUTOLOAD ======== */
+
+// TODO: Раскомментировать если в проекте не используется array-ext
+// const __AUTOLOAD__ = __DIR__ . "/../vendor/autoload.php";
+
+// if (file_exists(__AUTOLOAD__)) require __AUTOLOAD__;
+// else throw new \Error("Не собран файл авто загрузчика для пакета!");
+
+/* ======== AUTOLOAD ======== */
+
 /**
  * @version 1.1.0
  * @author awenn2015@gmail.com

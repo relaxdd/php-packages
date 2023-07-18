@@ -20,6 +20,8 @@ use JetBrains\PhpStorm\NoReturn;
 // if (file_exists(__AUTOLOAD__)) require __AUTOLOAD__;
 // else throw new \Error("Не собран файл авто загрузчика для пакета!");
 
+/* ======== AUTOLOAD ======== */
+
 /*
  * История обновлений
  *
